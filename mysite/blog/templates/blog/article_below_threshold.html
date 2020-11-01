@@ -3,10 +3,11 @@
 	<input class="btn btn-primary" type=button value="Retour" onClick="javascript:history.go(-1);">
 	
 	<div class="title text-center">
-		<h1>Articles</h1>
+		<h1>Articles en dessous du seuil</h1>
 		<a class="btn btn-primary mt-2 mb-3" href="{% url 'new_article' %}" role="button">Ajouter</a>
 		<a class="btn btn-danger mt-2 mb-3" href="{% url 'article_below_threshold' %}" role="button">Afficher article en dessous du seuil</a>
 		<a class="btn btn-primary mt-2 mb-3" href="{% url 'article' %}" role="button">Afficher tous</a>
+		
 	</div>
 
 	<div class="display component">
