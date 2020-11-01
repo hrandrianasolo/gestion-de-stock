@@ -30,6 +30,34 @@
       <button type="button" class="btn btn-outline-info button-building" onclick="displayTable('article')">Article</button>
     </div>
     </div>
+
+    <div class="display component">
+        <table class="table campus ">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Modification / Suppresion</th>
+                </tr>
+            </thead>
+            <tbody>
+              {% for a in article %}
+              <tr class="{{c.id}}">
+                  <th scope="row">{{forloop.counter}}</th>
+                  <td>{{a.name}}</td>
+                  <td>{{a.price}}</td>
+                  <!--td>
+                      <a href="{% url 'edit_campus' c.id %}" class="btn btn-warning"><i class="fas fa-tools"></i></a>
+                      {% csrf_token %}
+                      <a href="/edit/campus/{{c.id}}/delete" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                  </td-->
+              </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+    </div>
+  
   {% endblock body%}
 </body>
 </html>
