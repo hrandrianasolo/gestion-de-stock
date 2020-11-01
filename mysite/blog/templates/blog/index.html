@@ -16,28 +16,27 @@
 <body>
   {% block body%}
     <div class="content">
-    <div class="add component">
-        <button type="button" class="btn btn-info" onclick="popup()">Ajouter</button>
-        <button type="button" class="btn btn-info" onclick="popup()">Supprimer</button>
-        <button type="button" class="btn btn-info" onclick="popup()">Modifier</button>
-    </div>
     <div class="title">
         <h1>Gestion de stock</h1>
     </div>
 
     <div class="component buttons">
-      <button type="button" class="btn btn-info button-campus" onclick="displayTable('provider')">Fournisseurs</button>
-      <button type="button" class="btn btn-outline-info button-building" onclick="displayTable('article')">Article</button>
+      <button type="button" class="btn btn-info button-campus" onclick="displayTable('provider')">Article</button>
+      <button type="button" class="btn btn-outline-info button-building" onclick="displayTable('article')">Providers</button>
     </div>
     </div>
 
     <div class="display component">
-        <table class="table campus ">
+        <!--Display table article-->
+        <table class="table campus show">
             <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">Price</th>
+                    <th scope="col">Barcode</th>
+                    <th scope="col">In stock</th>
+                    <th scope="col">Seuil</th>
                     <th scope="col">Modification / Suppresion</th>
                 </tr>
             </thead>
@@ -47,6 +46,9 @@
                   <th scope="row">{{forloop.counter}}</th>
                   <td>{{a.name}}</td>
                   <td>{{a.price}}</td>
+                  <td>{{a.barcode}}</td>
+                  <td>{{a.inStock}}</td>
+                  <td>{{a.seuil}}</td>
                   <!--td>
                       <a href="{% url 'edit_campus' c.id %}" class="btn btn-warning"><i class="fas fa-tools"></i></a>
                       {% csrf_token %}
