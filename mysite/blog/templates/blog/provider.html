@@ -4,7 +4,7 @@
 	
 	<div class="title text-center">
 		<h1>Fournisseur</h1>
-		<a class="btn btn-primary mt-2 mb-3" href="{% url 'new_provider' %}" role="button">Ajouter</a>
+		<a class="btn btn-primary mt-2 mb-3" href="{% url 'new_provider' %}" role="button">Nouveau</a>
 	</div>
 
 	<div class="display component">
@@ -31,7 +31,7 @@
 					<td><a href="{% url 'edit_provider' provider.id %}"
 						class="btn btn-warning">Modifier</a> <a
 						href="{% url 'delete_provider' provider.id %}"
-						class="btn btn-warning">Supprimer</a></td>
+						class="btn btn-danger">Supprimer</a></td>
 				</tr>
 				{% endfor %}
 			</tbody>
