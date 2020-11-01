@@ -1,0 +1,169 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
+.content {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.component {
+    width: 75vw;
+}
+
+.add {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 2vh;
+}
+
+.component button {
+    margin-left: 0.4vw;
+    margin-right: 0.4vw;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    margin-top: 22vh;
+}
+
+.search {
+    width: 30vw;
+    margin-top: 8vh;
+    margin-bottom: 14vh;
+}
+
+.popup {
+    position: absolute;
+    top: 27.5vh;
+    right: 32.5vw;
+    background-color: white;
+    border: solid 1px #17a2b8;
+}
+
+.display i {
+    color: white;
+}
+
+.file i {
+    color: #17a2b8;
+}
+
+.file:hover i {
+    color: white;
+}
+
+.show-popup {
+    width: 45vw;
+    height: 35vh;
+}
+
+.show-popup form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 25vh;
+}
+
+.show-popup a {
+    position: relative;
+    top: 0.5vw;
+    left: 42.5vw;
+    color : #17a2b8;
+}
+
+
+.hide-popup {
+    display: none;
+}
+
+.buttons {
+  margin-bottom: 3vh;
+  margin-top: 8vh;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display : table;
+}
+
+
+/**********************************     EDIT     ********************************************/
+.edit-background {
+    background-color: #efefef;
+    min-height: 100vh;
+}
+
+.edit-body {
+    display: flex;
+}
+
+.edit-box {
+    background-color: white;
+    padding: 0.75rem;
+    margin: 0.5rem;
+}
+
+.edit-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+}
+
+.edit-title div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-title i {
+    font-size: 2rem;
+    margin: 1.5rem;
+}
+
+.edit-component {
+    margin-left: 5vw;
+}
+
+.edit-left-box {
+    width: 50vw;
+}
+
+.edit-right-box {
+    width: 30vw;
+}
+
+.edit-list {
+    height: 32vh;
+    overflow-y: auto;
+    padding-top: 0.5rem;
+}
+
+.edit-list-line {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.edit-list-title {
+    border-bottom: solid 1px gray;
+}
+
+.edit-right-box .edit-box {
+    margin-bottom: 2vh;
+}
+
+.edit-room-add-title {
+    border-bottom: solid 1px lightgray;
+    padding-bottom: 0.25rem;
+}
