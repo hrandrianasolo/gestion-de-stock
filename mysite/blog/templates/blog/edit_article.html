@@ -1,0 +1,59 @@
+{% extends 'blog/layout.html' %} {% block body %}
+<div class="edit-background">
+	<div class="edit-title">
+		<div class="">
+			<h1>{{article.name}}</h1>
+		</div>
+	</div>
+
+	<div class="edit-body">
+		<div class="edit-component edit-left-box">
+			<div class="edit-box edit-article-informations">
+				<form method="POST">
+					{% csrf_token %}
+					<div class="form-row">
+						<div class="form-group col-md-6">
+							<label for="name">Nom</label> <input type="text"
+								class="form-control" name="name" value="{{article.name}}">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="phone">Prix</label> <input type="number" step="0.01"
+								class="form-control" name="price" value="{{article.price}}">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="phone">Code bare</label> <input type="number"
+								class="form-control" name="barcode" value="{{article.barcode}}">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="address">Stock</label> <input type="number"
+								class="form-control" name="stock" value="{{article.stock}}">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="zip_code">Seuil</label> <input type="number"
+								class="form-control" name="seuil" value="{{article.seuil}}">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="zip_code">Vendu en poids</label> 
+							<input type="checkbox" name="is_sold_with_weight" value="{{article.is_sold_with_weight}}">
+
+						</div>
+						<div class="form-group col-md-6">
+							<label for="provider">Fournisseur</label> <select
+								class="form-control" name="provider">
+								{% for provider in list_provider %} 
+								{% if provider.id == article.provider.id %}
+								<option value="{{article.provider.id}}" selected="selected">{{article.provider.name}}</option>
+								{% else %}
+								<option value="{{provider.id}}">{{provider.name}}</option>
+								{% endif %} 
+								{% endfor %}
+							</select>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-info">Modifier</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

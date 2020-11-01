@@ -25,6 +25,10 @@
 					<td>{{provider.phone}}</td>
 					<td>{{provider.address}}</td>
 					<td>{{provider.zip_code}}</td>
+					<td><a href="{% url 'edit_provider' provider.id %}"
+						class="btn btn-warning"></i>Modifier</a> <a
+						href="{% url 'delete_provider' provider.id %}"
+						class="btn btn-warning"></i>Supprimer</a></td>
 				</tr>
 				{% endfor %}
 			</tbody>
