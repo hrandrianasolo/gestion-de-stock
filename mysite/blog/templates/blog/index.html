@@ -21,8 +21,8 @@
     </div>
 
     <div class="component buttons">
-      <button type="button" class="btn btn-info button-campus" onclick="displayTable('provider')">Article</button>
-      <button type="button" class="btn btn-outline-info button-building" onclick="displayTable('article')">Providers</button>
+      <button type="button" class="btn btn-info button-campus" onclick="displayTable('article')">Articles</button>
+      <button type="button" class="btn btn-outline-info button-building" onclick="displayTable('provider')">Fournisseurs</button>
     </div>
     </div>
 
@@ -32,10 +32,10 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Barcode</th>
-                    <th scope="col">In stock</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prix</th>
+                    <th scope="col">Code barre</th>
+                    <th scope="col">En stock</th>
                     <th scope="col">Seuil</th>
                     <th scope="col">Modification / Suppresion</th>
                 </tr>
@@ -49,6 +49,35 @@
                   <td>{{a.barcode}}</td>
                   <td>{{a.inStock}}</td>
                   <td>{{a.seuil}}</td>
+                  <!--td>
+                      <a href="{% url 'edit_campus' c.id %}" class="btn btn-warning"><i class="fas fa-tools"></i></a>
+                      {% csrf_token %}
+                      <a href="/edit/campus/{{c.id}}/delete" class="btn btn-danger"><i class="far fa-trash-alt"></i></a>
+                  </td-->
+              </tr>
+              {% endfor %}
+            </tbody>
+        </table>
+        <!--Display table fournisseur-->
+        <table class="table campus hide">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Nom</th>
+                    <th scope="col">Telephone</th>
+                    <th scope="col">Adresse</th>
+                    <th scope="col">Code postale</th>
+                    <th scope="col">Modification / Suppresion</th>
+                </tr>
+            </thead>
+            <tbody>
+              {% for p in provider %}
+              <tr class="{{c.id}}">
+                  <th scope="row">{{forloop.counter}}</th>
+                  <td>{{p.name}}</td>
+                  <td>{{p.phone}}</td>
+                  <td>{{p.address}}</td>
+                  <td>{{p.zipcode}}</td>
                   <!--td>
                       <a href="{% url 'edit_campus' c.id %}" class="btn btn-warning"><i class="fas fa-tools"></i></a>
                       {% csrf_token %}
