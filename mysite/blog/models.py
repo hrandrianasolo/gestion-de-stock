@@ -1,18 +1,27 @@
 from django.conf import settings
 from django.db import models
 from django.utils import timezone
+DEFAULT_ID = 1
 
 
-class Post(models.Model):
-    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-    title = models.CharField(max_length=200)
-    text = models.TextField()
-    created_date = models.DateTimeField(default=timezone.now)
-    published_date = models.DateTimeField(blank=True, null=True)
+class Article(models.Model):
+    name = models.CharField(max_length = 500, default= "")
+    price = models.FloatField()
+    barcode = models.IntegerField(default=0)
+    inStock = models.IntegerField(default=0)
+    seuil = models.IntegerField(default=0)
+    isSaleInWeight = models.BooleanField()
 
-    def publish(self):
-        self.published_date = timezone.now()
-        self.save()
+class Provider(models.Model):
+    name = models.CharField(max_length = 500, default= "")
+    phoneNumber = models.IntegerField()
+    address = models.CharField(max_length = 500, default= "")
+    zipCode = models.IntegerField(default=0)
+    id_article = models.ForeignKey('Article' ,on_delete=models.CASCADE, default=DEFAULT_ID)
 
-    def __str__(self):
-        return self.title
+class Role(models.Model):
+    role = models.CharField(max_length = 500, default= "")
+
+class User(models.Model):
+    name = models.CharField(max_length = 500, default= "")
+    id_role = models.ForeignKey('Role' ,on_delete=models.CASCADE, default=DEFAULT_ID)
