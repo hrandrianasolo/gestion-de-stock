@@ -1,0 +1,41 @@
+{% extends 'blog/layout.html' %} {% block body %}
+<div class="content">
+	<div class="title text-center">
+		<h1>Articles</h1>
+	</div>
+
+	<div class="display component">
+		<!-- Article -->
+		<table class="table article">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Nom</th>
+					<th scope="col">Prix</th>
+					<th scope="col">Code bare</th>
+					<th scope="col">Stock</th>
+					<th scope="col">Seuil</th>
+					<th scope="col">Vendu en poids</th>
+					<th scope="col">Fournisseur</th>					
+					<th scope="col">Modification / Suppresion</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for article in listarticle %}
+				<tr class="{{provider.id}}">
+					<th scope="row">{{forloop.counter}}</th>
+					<td>{{provider.name}}</td>
+					<td>{{provider.price}}</td>
+					<td>{{provider.barcode}}</td>
+					<td>{{provider.stock}}</td>
+					<td>{{provider.seuil}}</td>
+					<td>{{provider.is_sold_with_weight}}</td>
+					<td>{{provider.provider}}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+{% endblock %}

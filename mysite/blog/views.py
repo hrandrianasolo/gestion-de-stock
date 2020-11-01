@@ -1,11 +1,18 @@
-from django.shortcuts import render
-from django.utils import timezone
+from django.shortcuts import render, redirect
 
-#from .models import Post
+from blog.models import Provider, Article
 
-#def post_list(request):
-#   posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-#   return render(request, 'blog/post_list.html', {'posts': posts})
 
-def index(request):
-    return render(request , 'blog/index.html', {'index': index})
+def home(request):
+    return redirect('provider')
+
+    
+def provider(request):
+    list_provider = Provider.objects.all().order_by('-name')
+    return render(request, 'blog/provider.html', {'listprovider': list_provider})
+
+
+def article(request):
+    list_article = Article.objects.all().order_by('-name')
+    return render(request, 'blog/article.html', {'listarticle': list_article})
+

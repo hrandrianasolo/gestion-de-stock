@@ -1,0 +1,35 @@
+{% extends 'blog/layout.html' %} {% block body %}
+<div class="content">
+	<div class="title text-center">
+		<h1>Fournisseur</h1>
+	</div>
+
+	<div class="display component">
+		<!-- Provider -->
+		<table class="table provider">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">Nom</th>
+					<th scope="col">Portable</th>
+					<th scope="col">Adresse</th>
+					<th scope="col">Code postal</th>
+					<th scope="col">Modification / Suppresion</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for provider in listprovider %}
+				<tr class="{{provider.id}}">
+					<th scope="row">{{forloop.counter}}</th>
+					<td>{{provider.name}}</td>
+					<td>{{provider.phone}}</td>
+					<td>{{provider.address}}</td>
+					<td>{{provider.zip_code}}</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+{% endblock %}

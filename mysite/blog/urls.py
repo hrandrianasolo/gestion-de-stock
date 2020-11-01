@@ -3,5 +3,7 @@ from . import views
 
 
 urlpatterns = [
-    path('', views.index, name='imdex'),
+    path('', views.home, name='home'),
+    path('provider', views.provider, name='provider'),
+    path('article', views.article, name='article'),
 ]
