@@ -1,0 +1,28 @@
+{% extends 'caisse/layout.html' %} {% block body %}
+<div class="content">
+	<div class="title text-center mb-5">
+		<h1>Retour d'article</h1>
+	</div>
+
+	<div class="container">
+
+		<form class="text-center" method="POST">
+			{% csrf_token %}
+			<div class="form-row">
+				<div class="form-group col-md-6">
+					<label for="name">Code bare</label> <input required="required"
+						type="text" class="form-control" name="barcode">
+				</div>
+				<div class="form-group col-md-6">
+					<label for="name">Nombres d'article</label> <input
+						required="required" type="number" class="form-control" name="nbr">
+				</div>
+				<div class="form-group col-md-12">
+					<button type="submit" class="btn btn-success">Retour</button>
+				</div>
+			</div>
+		</form>
+	</div>
+
+</div>
+{% endblock %}
